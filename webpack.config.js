@@ -24,7 +24,7 @@ module.exports = {
           }
         }, 'ts-loader'],
         exclude: /node_modules/,
-      },
+      }
     ]
   },
   resolve: {
