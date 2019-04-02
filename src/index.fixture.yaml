@@ -1,0 +1,267 @@
+three_hunk_diff:
+  diff: |
+    diff --git a/foo.txt b/foo.txt
+    index 1c99002..af5c719 100644
+    --- a/foo.txt
+    +++ b/foo.txt
+    @@ -1,11 +1,12 @@
+     1
+     2
+     3
+    +a
+    +b
+    +c
+     4
+     5
+     6
+    -7
+    -8
+     9
+     10
+     11
+    @@ -15,7 +16,7 @@
+     15
+     16
+     17
+    -18
+    +eighteen
+     19
+     20
+     21
+    @@ -28,9 +29,10 @@
+     28
+     29
+     30
+    -31
+    -32
+    -33
+    +foo
+    +bar
+    +baz
+    +qux
+     34
+     35
+     36
+  positions: [
+    {
+      before: 3,
+      after: 3,
+      invalidated: false
+    },
+    {
+      before: 4,
+      after: 7,
+      invalidated: false
+    },
+    {
+      before: 6,
+      after: 9,
+      invalidated: false
+    },
+    {
+      before: 7,
+      after: 10,
+      invalidated: true
+    },
+    {
+      before: 8,
+      after: 10,
+      invalidated: true
+    },
+    {
+      before: 9,
+      after: 10,
+      invalidated: false
+    },
+    {
+      before: 17,
+      after: 18,
+      invalidated: false
+    },
+    {
+      before: 18,
+      after: 20,
+      invalidated: true
+    },
+    {
+      before: 19,
+      after: 20,
+      invalidated: false
+    },
+    {
+      before: 30,
+      after: 31,
+      invalidated: false
+    },
+    {
+      before: 31,
+      after: 36,
+      invalidated: true
+    },
+    {
+      before: 32,
+      after: 36,
+      invalidated: true
+    },
+    {
+      before: 33,
+      after: 36,
+      invalidated: true
+    },
+    {
+      before: 34,
+      after: 36,
+      invalidated: false
+    }
+  ]
+added_lines_at_ends:
+  diff: |
+    diff --git a/a.txt b/a.txt
+    index 1c99002..21a08b3 100644
+    --- a/a.txt
+    +++ b/a.txt
+    @@ -1,3 +1,5 @@
+    +a
+    +b
+     1
+     2
+     3
+    @@ -38,3 +40,5 @@
+     38
+     39
+     40
+    +foo
+    +bar
+  positions: [
+    {
+      before: 1,
+      after: 3,
+      invalidated: false
+    },
+    {
+      before: 40,
+      after: 42,
+      invalidated: false
+    },
+  ]
+removed_lines_at_ends:
+  diff: |
+    diff --git a/a.txt b/a.txt
+    index 1c99002..bafc1c0 100644
+    --- a/a.txt
+    +++ b/a.txt
+    @@ -1,5 +1,3 @@
+    -1
+    -2
+     3
+     4
+     5
+    @@ -36,5 +34,3 @@
+     36
+     37
+     38
+    -39
+    -40
+  positions: [
+    {
+      before: 1,
+      after: 1,
+      invalidated: true
+    },
+    {
+      before: 2,
+      after: 1,
+      invalidated: true
+    },
+    {
+      before: 3,
+      after: 1,
+      invalidated: false
+    },
+    {
+      before: 38,
+      after: 36,
+      invalidated: false
+    },
+    {
+      before: 39,
+      after: 37,
+      invalidated: true
+    },
+    {
+      before: 40,
+      after: 37,
+      invalidated: true
+    },
+  ]
+mid_file_hunks:
+  diff: |
+    diff --git a/file.txt b/file.txt
+    index 190423f..9e921c3 100644
+    --- a/file.txt
+    +++ b/file.txt
+    @@ -15,7 +15,7 @@
+     15
+     16
+     17
+    -18
+    +eighteen
+     19
+     20
+     21
+    @@ -28,10 +28,9 @@
+     28
+     29
+     30
+    -31
+    -32
+    -33
+    -34
+    +foo
+    +bar
+    +baz
+     35
+     36
+     37
+  positions: [
+    {
+      diff: 3,
+      file: 17
+    },
+    {
+      diff: 4,
+      file: 17
+    },
+    {
+      diff: 5,
+      file: 18
+    },
+    {
+      diff: 6,
+      file: 19
+    },
+    {
+      diff: 12,
+      file: 30
+    },
+    {
+      diff: 14,
+      file: 30
+    },
+    {
+      diff: 16,
+      file: 30
+    },
+    {
+      diff: 17,
+      file: 31
+    },
+    {
+      diff: 19,
+      file: 33
+    },
+    {
+      diff: 20,
+      file: 34
+    },
+  ]
