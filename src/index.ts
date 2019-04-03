@@ -22,7 +22,16 @@ const isAdd = (line: string) => line[0] === '+'
 const isDel = (line: string) => line[0] === '-'
 
 
-export function translateLinesGivenDiff(lines: number[], rawDiff) {
+export function translateLinesGivenDiff(lines: number[], diffInput) {
+  let diff
+  if (diffInput.constructor === String) {
+    diff = parse(diffInput)[0]
+  } else if (diffInput.hunks) {
+    diff = diffInput
+  } else {
+    throw new Error('Invalid diff input')
+  }
+
   const index = new MarkerIndex()
 
   // insert markers corresponding to original line positions
@@ -36,8 +45,6 @@ export function translateLinesGivenDiff(lines: number[], rawDiff) {
 
   let delta = 0
   const invalidatedMarkers = new Set()
-
-  const diff = parse(rawDiff)[0]
 
   diff && diff.hunks.forEach(hunk => {
 
@@ -78,7 +85,6 @@ export function diffPositionToFilePosition(positions: number[], diffInput) {
   if (diffInput.constructor === String) {
     diff = parse(diffInput)[0]
   } else if (diffInput.hunks) {
-    // create what-the-diff types
     diff = diffInput
   } else {
     throw new Error('Invalid diff input')
