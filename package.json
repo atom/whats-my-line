@@ -6,7 +6,8 @@
   "scripts": {
     "rebuild": "rm -rf **/dist **/types && npm install",
     "test": "ts-mocha test/**/*.test.ts",
-    "build": "tsc -p ./tsconfig.json"
+    "build": "tsc -p ./tsconfig.json",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
