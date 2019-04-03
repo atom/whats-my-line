@@ -1,5 +1,5 @@
 import { deepEqual } from 'assert'
-import { translateLinesGivenDiff, diffPositionToFilePosition } from './index'
+import { translateLinesGivenDiff, diffPositionToFilePosition } from '../src/index'
 
 import { readFileSync } from 'fs'
 const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./index.fixture.yaml')))
