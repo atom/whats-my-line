@@ -9,9 +9,17 @@
     "build": "tsc -p ./tsconfig.json",
     "prepare": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuychaco/whats-my-line"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuychaco/whats-my-line/issues"
+  },
+  "homepage": "https://github.com/kuychaco/whats-my-line",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
