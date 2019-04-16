@@ -31,7 +31,7 @@ Say we have three GitHub comments made on the following diff:
      21
 ```
 
-` 15` is the first line of the diff and it corresponds to a context line at line 15 in `file.txt` (as indicated by the header `@@ -15,7 +15,7 @@`). `-18` the 4th line of the diff and corresponds to the 17th line of the file (since the 18th line was removed). `+eighteen` is the 5th line in the diff, and corresponds to new text at the 18th line of the file.
+` 15` is the first line of the diff and it corresponds to a context line at the 15th line in `file.txt` (as indicated by the header `@@ -15,7 +15,7 @@`). `-18` the 4th line of the diff and corresponds to the 17th line of the file (since the 18th line was removed). `+eighteen` is the 5th line in the diff, and corresponds to new text at the 18th line of the file.
 
 If we feed the diff positions along with the diff to `diffPositionToFilePosition` then we get a map of those diff positions to the corresponding file positions.
 
