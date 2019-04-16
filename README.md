@@ -97,7 +97,7 @@ const translations = translateLinesGivenDiff([15,17,18], diffString)
 translations = Map {
   15 => { newPosition: 5, invalidated: false },   💬 comment 1
   17 => { newPosition: 7, invalidated: false },   💬 comment 2
-  18 => { newPosition: 8, invalidated: true }     💬 comment 3
+  18 => { newPosition: 8, invalidated: true }     💬 comment 3 (corresponding line was removed)
 }
 */
 ```
