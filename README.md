@@ -1,3 +1,5 @@
+![image from "what's my line" tv show](./img/whats-my-line.jpg)
+
 `whats-my-line` is a handy library for displaying GitHub comments within a text editor. It handles calculations to go from diff position (returned from the GitHub API), to file location. And also calculates adjustments based on working directory changes compared to the tip of the PR branch.
 
 ## Installation
