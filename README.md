@@ -33,7 +33,7 @@ Say we have three GitHub comments made on the following diff:
 
 ` 15` is the first line of the diff and it corresponds to a context line at line 15 in `file.txt` (as indicated by the header `@@ -15,7 +15,7 @@`). `-18` the 4th line of the diff and corresponds to the 17th line of the file (since the 18th line was removed). `+eighteen` is the 5th line in the diff, and corresponds to new text at the 18th line of the file.
 
-If we feed the diff positions to `diffPositionToFilePosition` then we get a map of those diff positions to the corresponding file positions.
+If we feed the diff positions along with the diff to `diffPositionToFilePosition` then we get a map of those diff positions to the corresponding file positions.
 
 ```js
 import {diffPositionToFilePosition} from 'whats-my-line';
@@ -52,7 +52,7 @@ translations = Map {
 
 ### translateLinesGivenDiff
 
-If we're in an editor and the version of `file.txt` on disk is different than the version on GitHub that we pulled comment positions from, there is more work to be done. This can happen if the user has made changes locally since syncing with their GitHub remote.
+If we're in an editor and the version of `file.txt` on disk is different than the version on GitHub that we pulled comment positions from, there is more work to be done. This can happen if the user has made changes locally since last pushing/pulling from their GitHub remote.
 
 Say the user deleted the first 10 lines of the file, and also deleted the line that says "eighteen" on it. The comments would shift up 10 lines, and the line that the third comment was on would be invalidated. Let's use `translateLinesGivenDiff` to give us the new lines and the relevant invalidation information.
 
