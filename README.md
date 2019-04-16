@@ -40,13 +40,65 @@ const diffPositions = [1, 4, 5]
 const translations = diffPositionToFilePosition(diffPositions, fileDiffString)
 
 /*
-translations = Map { 1 => 15, 4 => 17, 5 => 18 }
+translations = Map {
+    1 => 15,   💬 comment 1
+    4 => 17,   💬 comment 2
+    5 => 18    💬 comment 3
 }
 */
 ```
 
 ### translateLinesGivenDiff
 
+If we're in an editor and the version of `file.txt` on disk is different than the version on GitHub that we pulled comment positions from, there is more work to be done. This can happen if the user has made changes locally since syncing with their GitHub remote.
+
+Say the user deleted the first 10 lines of the file, and also deleted the line that says "eighteen" on it. The comments would shift up 10 lines, and the line that the third comment was on would be invalidated. Let's use `translateLinesGivenDiff` to give us the new lines and the relevant invalidation information.
+
+The diff for these working directory changes would look like this:
+
+```
+diff --git a/file.txt b/file.txt
+index 31b14db..0f7ce30 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1,13 +1,3 @@
+-1
+-2
+-3
+-4
+-5
+-6
+-7
+-8
+-9
+-10
+ 11
+ 12
+ 13
+@@ -15,7 +5,6 @@
+ 15
+ 16
+ 17
+-eighteen
+ 19
+ 20
+ 21
+```
+
+```js
+
+import {translateLinesGivenDiff} from 'whats-my-line';
+
+const translations = translateLinesGivenDiff([15,17,18], diffString)
+
+/*
+translations = Map {
+  15 => { newPosition: 5, invalidated: false },   💬 comment 1
+  17 => { newPosition: 7, invalidated: false },   💬 comment 2
+  18 => { newPosition: 8, invalidated: true }     💬 comment 3
+}
+*/
+```
 
 ### Diff input format
 
