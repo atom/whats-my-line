@@ -13,7 +13,11 @@
     "type": "git",
     "url": "https://github.com/kuychaco/whats-my-line"
   },
-  "keywords": ["GitHub", "comment", "diff"],
+  "keywords": [
+    "GitHub",
+    "comment",
+    "diff"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -36,7 +40,7 @@
   },
   "dependencies": {
     "dugite": "^1.86.0",
-    "superstring": "^2.3.6",
+    "superstring": "^2.4.2",
     "what-the-diff": "^0.6.0"
   }
 }
