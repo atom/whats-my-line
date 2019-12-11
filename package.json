@@ -13,7 +13,11 @@
     "type": "git",
     "url": "https://github.com/kuychaco/whats-my-line"
   },
-  "keywords": ["GitHub", "comment", "diff"],
+  "keywords": [
+    "GitHub",
+    "comment",
+    "diff"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -31,12 +35,12 @@
     "ts-loader": "^5.3.3",
     "ts-mocha": "^6.0.0",
     "typescript": "^3.4.1",
-    "webpack": "^4.27.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
     "dugite": "^1.86.0",
-    "superstring": "^2.3.6",
+    "superstring": "^2.4.2",
     "what-the-diff": "^0.6.0"
   }
 }
