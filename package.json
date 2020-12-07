@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "dugite": "^1.86.0",
-    "superstring": "^2.4.3",
+    "superstring": "^2.4.4",
     "what-the-diff": "^0.6.0"
   }
 }
